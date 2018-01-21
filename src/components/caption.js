@@ -91,7 +91,7 @@ export class Caption extends Component {
            }
 			]
 		}
-		
+
 	}
 	onChange = (number, e) => {
 		let store = e.target.value;
@@ -102,7 +102,7 @@ export class Caption extends Component {
 				text: caption.number === number ? store : caption.text
 			}))
 		}))
-		
+
 	}
 
 	onClick = () => {
@@ -114,31 +114,36 @@ export class Caption extends Component {
 		      caption.text
 		    ].join('\n')
 		  }).join('\n') + '\n';
-		
+
 
 		this.props.onSubmit(srtString)
 		console.log(srtString)
-		
+
 	}
 
 
 	render() {
 		return(
-			<div>
-				Enter captions:
-				{this.state.srt.map(caption => 
-					<div key={caption.number}>
-						{caption.number}
-						<form onSubmit={this.onSubmit}>
-							<input placeholder="Enter texthere" value={caption.text} onChange={(e) => this.onChange(caption.number, e)} />
-							
-						</form>
-					</div>
-				)}
-				<button onClick={this.onClick} >add</button>
+			<div class="captions">
+				<h3>Enter your captions:</h3>
+				<div class="captions-container">
+					{this.state.srt.map(caption =>
+						<div class="caption" key={caption.number}>
+							<div class="caption-number">{caption.number}</div>
+							<form onSubmit={this.onSubmit}>
+								<input placeholder="Enter texthere" value={caption.text} onChange={(e) => this.onChange(caption.number, e)} />
+
+							</form>
+							<div class="caption-times">
+								<span>{caption.start}</span>
+								<span>{caption.end}</span>
+							</div>
+						</div>
+					)}
+				</div>
+				<button onClick={this.onClick} >Update + Preview</button>
 			</div>
 		)
 	}
 
 }
-

@@ -17,13 +17,17 @@ export class Video extends Component {
 	// 	console.log('updated first time')
 	// }
 
-	
+
 	componentWillReceiveProps(nextProps){
 			this.setState({
-				srt: this.props.srtString,
-				bool: true
+				srt: this.props.srtString
 			})
-			console.log(this.state.srt)		
+			console.log(this.state.srt)
+			if(this.state.srt !== undefined) {
+				this.setState({
+					bool: true
+				})
+			}
 	}
 
 
@@ -31,21 +35,20 @@ export class Video extends Component {
 	render() {
 		return(
 			this.state.bool ? (
-			<div>	
+			<div>
 			<video controls="controls" width="320" height="176">
 				<source src={TalkingTwins} type="video/mp4" />
 				<track src={this.state.srt} kind="subtitle" srclang="en-US" label="English" />
 				Your browser does not support HTML5 video.
 			</video>
-			</div>) : 
-			(<video controls="controls" width="320" height="176">
+			</div>) :
+
+			(<div className="video-container">
+				<video controls="controls" width="320" height="176">
 				<source src={TalkingTwins} type="video/mp4" />
 				Your browser does not support HTML5 video.
-			</video>)
+			</video></div>)
 		)
 	}
 
 }
-
-
-

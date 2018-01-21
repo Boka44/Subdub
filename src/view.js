@@ -17,7 +17,7 @@ export class View extends Component {
 			srtString,
 			bool: true
 		})
-		
+
 	}
 
 
@@ -25,7 +25,7 @@ export class View extends Component {
     return (
       <div className="App">
 
-      	<Video srt={this.state.srtString} />
+      	<Video srtString={this.state.srtString} />
         <Caption onSubmit={this.onSubmit}/>
       </div>
     );

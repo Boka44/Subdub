@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+body {
+  background: #FFF; }
+
+.App {
+  border: 1px solid red; }
+  .App video {
+    width: 80vw;
+    border: 1px solid red;
+    height: 100%; }
+
+/*# sourceMappingURL=output.map */
