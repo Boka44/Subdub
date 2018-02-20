@@ -1,8 +1,21 @@
 {
+<<<<<<< HEAD
   "name": "subcompserver",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+=======
+  "name": "subcomp",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:8080/",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.0"
+  },
+>>>>>>> 23db8c685d81e56b3e40572f01d502d8aa24843f
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently --kill-others-on-fail \"cd subcomp && npm start\" \"nodemon server.js\""
