@@ -6,18 +6,18 @@ export class View extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			srtString: undefined,
-			bool: false
+			bool: false,
+			srt: undefined
 
 		}
 	}
 
-	onSubmit = (srtString) => {
+	onSubmit = (bool, srt) => {
 		this.setState({
-			srtString,
-			bool: true
+			bool: true,
+			srt: srt
 		})
-
+		console.log(srt)
 	}
 
 
@@ -25,7 +25,7 @@ export class View extends Component {
     return (
       <div className="App">
 
-      	<Video srtString={this.state.srtString} />
+      	<Video bool={this.state.bool} srt={this.state.srt}  />
         <Caption onSubmit={this.onSubmit}/>
       </div>
     );
